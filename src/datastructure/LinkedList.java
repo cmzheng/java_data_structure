@@ -1,13 +1,19 @@
 package datastructure;
 
 public class LinkedList {
+    private Node head;
     // addFirst: append an element to the beginning of the list
     public void addFirst(int i) {
-
+        Node node = new Node(i);
+        node.next = head;
+        head = node;
     }
     // removeFirst: retrieve and remove the head of the list
     public int removeFirst() {
-
+        if (head == null) throw new RuntimeException("cannot remove from an empty linked list");
+        int ret = head.value;
+        head = head.next;
+        return ret;
     }
 
     public static class Node {
