@@ -2,6 +2,7 @@ package datastructure;
 
 public class LinkedList {
     private Node head;
+    private int size = 0;
 
     // O(1)
     // addFirst: append an element to the beginning of the list
@@ -9,6 +10,7 @@ public class LinkedList {
         Node node = new Node(i);
         node.next = head;
         head = node;
+        size += 1;
     }
 
     // O(1)
@@ -17,6 +19,7 @@ public class LinkedList {
         if (head == null) throw new RuntimeException("cannot remove from an empty linked list");
         int ret = head.value;
         head = head.next;
+        size -= 1;
         return ret;
     }
 
@@ -24,12 +27,16 @@ public class LinkedList {
     public void addLast(int i) {
         if (head == null) {
             head = new Node(i);
+            size += 1;
+            return;
         }
         Node node = head;
         while (node.next != null) {
             node = node.next;
         }
         node.next = new Node(i);
+        size += 1;
+
     }
 
     // O(n)
@@ -38,6 +45,7 @@ public class LinkedList {
         if (head.next == null) {
             int ret = head.value;
             head = null;
+            size -= 1;
             return ret;
         }
         Node node = head;
@@ -46,18 +54,13 @@ public class LinkedList {
         }
         int ret = node.next.value;
         node.next = null;
+        size -= 1;
         return ret;
     }
 
-    // O(n)
+    // O(1)
     public int size() {
-        int ret = 0;
-        Node node = head;
-        while (node != null) {
-            node = node.next;
-            ret += 1;
-        }
-        return ret;
+        return size;
     }
 
     public static class Node {

@@ -4,13 +4,17 @@ public class Main {
     public static void main(String args[]) {
         // LinkedList
         LinkedList list = new LinkedList();
+        System.out.println("size = " + list.size());
         list.addFirst(1);
+        System.out.println("size = " + list.size());
         list.addFirst(2);
+        System.out.println("size = " + list.size());
         list.addLast(3);
-        System.out.println(list.size());
+        System.out.println("size = " + list.size());
         System.out.println(list.removeLast());
-        System.out.println(list.size());
+        System.out.println("size = " + list.size());
         System.out.println(list.removeFirst());
+        System.out.println("size = " + list.size());
         System.out.println(list.removeFirst());
 
         try {
