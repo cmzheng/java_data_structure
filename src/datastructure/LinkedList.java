@@ -16,6 +16,39 @@ public class LinkedList {
         return ret;
     }
 
+    public void addLast(int i) {
+        if (head == null) {
+            head = new Node(i);
+        }
+        Node node = head;
+        while (node.next != null) {
+            node = node.next;
+        }
+        node.next = new Node(i);
+    }
+
+    public int removeLast() {
+        if (head == null) throw new RuntimeException("connot remove last element from empty linked list");
+        Node node = head;
+        while (node.next != null) {
+            node = node.next;
+        }
+        return node.value;
+    }
+
+    public int size() {
+        if (head == null) {
+            return 0;
+        }
+        Node node = head;
+        int count = 1;
+        while (node.next != null) {
+            node = node.next;
+            count += 1;
+        }
+        return count;
+    }
+
     public static class Node {
         private int value;
         private Node next;
