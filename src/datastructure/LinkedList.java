@@ -37,16 +37,13 @@ public class LinkedList {
     }
 
     public int size() {
-        if (head == null) {
-            return 0;
-        }
+        int ret = 0;
         Node node = head;
-        int count = 1;
-        while (node.next != null) {
+        while (node != null) {
             node = node.next;
-            count += 1;
+            ret += 1;
         }
-        return count;
+        return ret;
     }
 
     public static class Node {
