@@ -1,7 +1,7 @@
 package datastructure;
 
 public class Stack {
-    private LinkedList list;
+    private LinkedList<Integer> list;
 
     public Stack() {
         this.list = new LinkedList();
