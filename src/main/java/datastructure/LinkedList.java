@@ -63,7 +63,7 @@ public class LinkedList {
         return size;
     }
 
-    private static class Node {
+    private class Node {
         private int value;
         private Node next;
 

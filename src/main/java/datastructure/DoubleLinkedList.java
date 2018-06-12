@@ -59,7 +59,7 @@ public class DoubleLinkedList {
         return size;
     }
 
-    private static class Node {
+    private class Node {
         private int value;
         private Node prev;
         private Node next;
