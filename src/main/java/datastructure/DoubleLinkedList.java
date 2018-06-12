@@ -64,7 +64,7 @@ public class DoubleLinkedList {
         private Node prev;
         private Node next;
 
-        public Node(int i) {
+        Node(int i) {
             this.value = i;
         }
     }
