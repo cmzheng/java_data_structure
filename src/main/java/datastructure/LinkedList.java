@@ -7,7 +7,7 @@ public class LinkedList<T> {
     // O(1)
     // addFirst: append an element to the beginning of the list
     public void addFirst(T i) {
-        Node<T> node = new Node(i);
+        Node<T> node = new Node<>(i);
         node.next = head;
         head = node;
         size += 1;
@@ -26,15 +26,15 @@ public class LinkedList<T> {
     // O(n)
     public void addLast(T i) {
         if (head == null) {
-            head = new Node(i);
+            head = new Node<>(i);
             size += 1;
             return;
         }
-        Node node = head;
+        Node<T> node = head;
         while (node.next != null) {
             node = node.next;
         }
-        node.next = new Node(i);
+        node.next = new Node<>(i);
         size += 1;
 
     }
