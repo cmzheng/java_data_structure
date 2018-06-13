@@ -1,6 +1,6 @@
 package datastructure;
 
-public class DoubleLinkedList {
+public class DoubleLinkedList implements List {
     private Node head;
     private Node tail;
     private int size;
