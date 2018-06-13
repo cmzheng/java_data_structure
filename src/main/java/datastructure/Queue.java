@@ -1,10 +1,10 @@
 package datastructure;
 
 public class Queue {
-    private DoubleLinkedList list;
+    private DoubleLinkedList<Integer> list;
 
     public Queue() {
-        this.list = new DoubleLinkedList();
+        this.list = new DoubleLinkedList<>();
     }
     public void push(int i) {
         list.addFirst(i);

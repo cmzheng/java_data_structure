@@ -1,13 +1,13 @@
 package datastructure;
 
-public class DoubleLinkedList {
-    private Node head;
-    private Node tail;
+public class DoubleLinkedList<T> implements List<T> {
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
-    public void addFirst(int i) {
+    public void addFirst(T i) {
         size++;
-        Node node = new Node(i);
+        Node<T> node = new Node<>(i);
         if (head == null) {
             head = node;
             tail = node;
@@ -18,9 +18,9 @@ public class DoubleLinkedList {
         head = node;
     }
 
-    public void addLast(int i) {
+    public void addLast(T i) {
         size++;
-        Node node = new Node(i);
+        Node<T> node = new Node<>(i);
         if (tail == null) {
             head = node;
             tail = node;
@@ -31,9 +31,9 @@ public class DoubleLinkedList {
         tail = node;
     }
 
-    public int removeFirst() {
+    public T removeFirst() {
         if (head == null) throw new RuntimeException("cannot remove from an empty list");
-        int ret = head.value;
+        T ret = head.value;
         head = head.next;
         if (head != null) head.prev = null;
         if (head == null) tail = null;
@@ -41,9 +41,9 @@ public class DoubleLinkedList {
         return ret;
     }
 
-    public int removeLast() {
+    public T removeLast() {
         if (tail == null) throw new RuntimeException("cannot remove from an empty list");
-        int ret = tail.value;
+        T ret = tail.value;
         if (tail.prev == null) {
             tail = null;
             head = null;
@@ -59,12 +59,12 @@ public class DoubleLinkedList {
         return size;
     }
 
-    private class Node {
-        private int value;
-        private Node prev;
-        private Node next;
+    private class Node<T> {
+        private T value;
+        private Node<T> prev;
+        private Node<T> next;
 
-        Node(int i) {
+        Node(T i) {
             this.value = i;
         }
     }

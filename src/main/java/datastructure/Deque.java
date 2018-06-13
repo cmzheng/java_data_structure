@@ -1,10 +1,10 @@
 package datastructure;
 
 public class Deque {
-    private DoubleLinkedList list;
+    private DoubleLinkedList<Integer> list;
 
     public Deque() {
-        this.list = new DoubleLinkedList();
+        this.list = new DoubleLinkedList<>();
     }
 
     public int size() {

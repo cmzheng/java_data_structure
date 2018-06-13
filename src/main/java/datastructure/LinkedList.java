@@ -1,6 +1,7 @@
 package datastructure;
 
-public class LinkedList<T> {
+
+public class LinkedList<T> implements List<T> {
     private Node<T> head;
     private int size = 0;
 
